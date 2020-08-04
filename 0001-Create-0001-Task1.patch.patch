@@ -1,0 +1,47 @@
+From bc5a4db0aceffe103ae25d7daa2dc6584a4b4bb5 Mon Sep 17 00:00:00 2001
+From: Yin Chang <yinnnn17@gmail.com>
+Date: Mon, 3 Aug 2020 17:47:11 -0700
+Subject: [PATCH] Create 0001-Task1.patch
+
+---
+ 0001-Task1.patch | 28 ++++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+ create mode 100644 0001-Task1.patch
+
+diff --git a/0001-Task1.patch b/0001-Task1.patch
+new file mode 100644
+index 0000000..04b8181
+--- /dev/null
++++ b/0001-Task1.patch
+@@ -0,0 +1,28 @@
++From 0c6a7069ae7c38c17ce8294ebdc4577591dcee99 Mon Sep 17 00:00:00 2001
++From: Yin Chang <yinnnn17@gmail.com>
++Date: Mon, 3 Aug 2020 17:29:36 -0700
++Subject: [PATCH] Task1
++
++implemet Dragula
++---
++ src/Board.js | 6 ++++++
++ 1 file changed, 6 insertions(+)
++
++diff --git a/src/Board.js b/src/Board.js
++index 1f00045..66da6a8 100644
++--- a/src/Board.js
+++++ b/src/Board.js
++@@ -75,4 +75,10 @@ export default class Board extends React.Component {
++       </div>
++     );
++   }
+++  componentDidMount() {
+++    Dragula([this.swimlanes.backlog.current,this.swimlanes.inProgress.current,this.swimlanes.complete.current]).on('drop', function (el,target,source,sibling) {
+++    el.setAttribute("data-status",sibling.getAttribute("data-status")) 
+++    el.setAttribute("class",sibling.getAttribute("class")) 
+++  })
+++  }
++ }
++-- 
++2.23.0
++
+-- 
+2.23.0
+
